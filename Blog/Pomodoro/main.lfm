@@ -1,0 +1,43 @@
+object MainFrm: TMainFrm
+  Left = 498
+  Height = 196
+  Top = 204
+  Width = 307
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
+  Caption = 'Cronómetro pomodoro'
+  ClientHeight = 196
+  ClientWidth = 307
+  Position = poDesktopCenter
+  LCLVersion = '2.0.6.0'
+  object lbTime: TLabel
+    Left = 0
+    Height = 81
+    Top = 0
+    Width = 307
+    Align = alTop
+    Alignment = taCenter
+    AutoSize = False
+    Caption = '00:00'
+    Font.Height = 81
+    ParentColor = False
+    ParentFont = False
+  end
+  object btControl: TButton
+    Left = 112
+    Height = 25
+    Top = 128
+    Width = 75
+    Caption = 'Arrancar'
+    OnClick = btControlClick
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    OnStartTimer = Timer1StartTimer
+    OnStopTimer = Timer1StopTimer
+    left = 24
+    top = 112
+  end
+end
