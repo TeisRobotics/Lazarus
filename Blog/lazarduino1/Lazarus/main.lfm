@@ -1,0 +1,60 @@
+object LazSerialFrm: TLazSerialFrm
+  Left = 496
+  Height = 240
+  Top = 123
+  Width = 320
+  Caption = 'LazSerial'
+  ClientHeight = 240
+  ClientWidth = 320
+  LCLVersion = '2.0.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 320
+    Align = alTop
+    ClientHeight = 50
+    ClientWidth = 320
+    TabOrder = 0
+    object btConectar: TButton
+      Left = 8
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Conectar'
+      OnClick = btConectarClick
+      TabOrder = 0
+    end
+    object btConfigurar: TButton
+      Left = 112
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Configurar'
+      OnClick = btConfigurarClick
+      TabOrder = 1
+    end
+  end
+  object Memo1: TMemo
+    Left = 0
+    Height = 190
+    Top = 50
+    Width = 320
+    Align = alClient
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+  object LazSerial1: TLazSerial
+    Active = False
+    BaudRate = br___110
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = 'COM1'
+    RcvLineCRLF = False
+    OnRxData = LazSerial1RxData
+    left = 80
+    top = 104
+  end
+end
