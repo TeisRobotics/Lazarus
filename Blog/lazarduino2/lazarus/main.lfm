@@ -1,0 +1,80 @@
+object mainfrm: Tmainfrm
+  Left = 761
+  Height = 419
+  Top = 306
+  Width = 537
+  BorderStyle = bsDialog
+  Caption = 'Enviar y recibir'
+  ClientHeight = 419
+  ClientWidth = 537
+  Position = poDesktopCenter
+  LCLVersion = '2.0.8.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 88
+    Top = 0
+    Width = 537
+    Align = alTop
+    ClientHeight = 88
+    ClientWidth = 537
+    TabOrder = 0
+    object btConectar: TButton
+      Left = 16
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Conectar'
+      OnClick = btConectarClick
+      TabOrder = 0
+    end
+    object edtexto: TEdit
+      Left = 120
+      Height = 25
+      Top = 32
+      Width = 304
+      Enabled = False
+      TabOrder = 1
+    end
+    object btEnviar: TButton
+      Left = 440
+      Height = 25
+      Top = 32
+      Width = 75
+      Caption = 'Enviar'
+      Enabled = False
+      OnClick = btEnviarClick
+      TabOrder = 2
+    end
+    object btConfigurar: TButton
+      Left = 16
+      Height = 25
+      Top = 52
+      Width = 75
+      Caption = 'Configurar'
+      OnClick = btConfigurarClick
+      TabOrder = 3
+    end
+  end
+  object mnRecibir: TMemo
+    Left = 0
+    Height = 331
+    Top = 88
+    Width = 537
+    Align = alClient
+    ScrollBars = ssAutoBoth
+    TabOrder = 1
+  end
+  object LazSerial1: TLazSerial
+    Active = False
+    BaudRate = br__9600
+    DataBits = db8bits
+    Parity = pNone
+    FlowControl = fcNone
+    StopBits = sbOne
+    Device = '/dev/ttyS0'
+    RcvLineCRLF = False
+    OnRxData = LazSerial1RxData
+    left = 96
+    top = 112
+  end
+end
